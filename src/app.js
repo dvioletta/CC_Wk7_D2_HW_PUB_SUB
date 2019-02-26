@@ -6,4 +6,8 @@ const InstrumentsInfoView = require('./views/instruments_info_view.js');
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript Loaded');
+
+  const selectElement = document.querySelector('select#instrument-families'); const instrumentFamilyDropdown = new InstrumentsMenuView(selectElement);
+  console.log('hi');
+  instrumentFamilyDropdown.bindEvents();
 });
