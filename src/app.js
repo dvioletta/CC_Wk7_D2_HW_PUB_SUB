@@ -10,4 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const selectElement = document.querySelector('select#instrument-families'); const instrumentFamilyDropdown = new InstrumentsMenuView(selectElement);
   console.log('hi');
   instrumentFamilyDropdown.bindEvents();
+
+  const instrumentFamiliesModel = new InstrumentFamilies(instrumentFamilyData);
+  instrumentFamiliesModel.bindEvents()
+  
 });

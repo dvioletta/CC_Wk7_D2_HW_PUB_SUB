@@ -4,14 +4,14 @@ const InstrumentsInfoView = function(container){
   this.container = container;
 }
 
-InstrumentsInfoView.protoytpe.bindEvents = function(){
+InstrumentsInfoView.prototype.bindEvents = function(){
   PubSub.subscribe('Instruments:selected-instrument-ready', (evt) => {
     const instrument = evt.detail;
-    this.renter(instrument);
+    this.render(instrument);
   });
 };
 
-InstrumentsInfoView.protoytpe.render = function(instrument){
+InstrumentsInfoView.prototype.render = function(instrument){
   this.container.innerHTML = ' ';
 
   const heading = this.createHeading(instrument);
@@ -21,11 +21,11 @@ InstrumentsInfoView.protoytpe.render = function(instrument){
   this.container.appendChild(infoList);
 };
 
-PlanetInfoView.prototype.createHeading = function(instrument) {
-  const heading = document.createElement('h2');
-  heading.textContent = instrumentFamilyData.name;
-  return heading;
-};
+// PlanetInfoView.prototype.createHeading = function(instrument) {
+//   const heading = document.createElement('h2');
+//   heading.textContent = instrumentFamilyData.name;
+//   return heading;
+// };
 
 
 

@@ -4,6 +4,10 @@ const InstrumentsMenuView = function(element){
   this.element = element;
 }
 
+InstrumentsMenuView.prototype.bindevents = function() {
+  PubSub.publish('Instuments:ready-to-send', this.instrumentFamilyData)
+}
+
 InstrumentsMenuView.prototype.bindEvents = function(){
   PubSub.subscribe('Instruments:selected-instrument-ready', (evt) => {
     const instrumentsFamilyData = evt.detail;
